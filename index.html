@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    body {
+      color: #444;
+      font-family: sans-serif;
+      line-height: 1.4;
+    }
+    code {
+      font-size: 1rem;
+    }
+    img {
+      border: 1px solid #ccc;
+      margin: 0.3rem 0 0.7rem;
+    }
+    h1, h2, h3 {
+      color: #555;
+      font-weight: normal;
+    }
+    h2 {
+      border-top: 1px solid #ccc;
+      color: #C55;
+      padding-top: 1rem;
+    }
+    .container {
+      margin: 0 auto;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>BitTorrent Sync instructions</h1>
+
+<h3 id="contents">Contents</h1>
+<ol>
+  <li><a href="#setupserver">Setup BitTorrent Sync server</a></li>
+  <li><a href="#adminfiles">Admin files</a></li>
+  <li><a href="#largemediafiles">Large media files</a></li>
+  <li><a href="#setupsubsequentdevices">Setup subsequent devices</a></li>
+</ol>
+
+<h2 id="setupserver">1. Setup BitTorrent Sync server</h2>
+
+<ol>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-connect-to-your-droplet-with-ssh">Connect to Droplet with SSH</a>.</li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04">Add new user, with SSH key, disable root</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/additional-recommended-steps-for-new-ubuntu-14-04-servers">Configure ufw firewall, configure timezone, install network time server, take snapshot</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-host-name-with-digitalocean">Set up hostname</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-bittorrent-sync-to-synchronize-directories-in-ubuntu-14-04">Install BitTorrent Sync</a></li>
+  <li><a href="https://cloud.digitalocean.com/droplets/13374117/backups">Enable DigitalOcean backups? $2 per month</a></li>
+</ol>
+
+<h2 id="adminfiles">2. Admin files</h2>
+
+<ol>
+<li>Organise your files and folders on one computer. It is important to have a simple yet flexible file structure.<br/>
+<img src="./img/01-organised.png" alt="Screenshot of organised files and folders" /></li>
+<li>Install Sync.</li>
+<li>Add folders to Sync.<br/>
+<img src="./img/02-add.png" alt="Screenshot of folders to add to Sync" /></li>
+<li>Copy link. For security, the BitTorrent Sync server should have READ ONLY permission.<br/>
+<img src="./img/03-copylink.png" alt="Screenshot of copy link dialog" /></li>
+<li>On the BitTorrent Sync server browser interface, click <code>Manual Connection</code> and paste in link.<br/>
+<img src="./img/04-manual.png" alt="Screenshot of browser manual connection dialog" /></li>
+<li>Connect to the folder. By default, all btsync folders are stored in <code>/shared/</code>.<br/>
+<img src="./img/05-connect.png" alt="Screenshot of browser connect to folder dialog" /></li>
+<li>Approve the connection. That’s it :)<br/>
+<img src="./img/06-pending.png" alt="Screenshot of browser pending approval message" /></li>
+</ol>
+
+<h2 id="largemediafiles">3. Large media files</h2>
+
+<p>When you set up your Mac Mini as a media server, follow the same process by installing Sync, adding the <code>Media</code> folder to Sync, then sharing it READ ONLY with BitTorrent Sync server. This way, the BitTorrent Sync server acts as a &#8220;mirror&#8221; of the Mac Mini <code>Media</code> library. That is, the BitTorrent Sync server will have <em>all</em> the hi-res images on it. </p>
+
+<p>The BitTorrent Sync server has about 25GB of hard disk space, so there should be enough there for a while. It can be increased later by resizing the droplet in DigitalOcean.</p>
+
+<figure>
+<img src="./img/07-link.png" alt="Screenshot of enter link dialog" />
+<figcaption>Screenshot of enter link dialog</figcaption></figure>
+
+
+
+<figure>
+<img src="./img/08-selective.png" alt="Screenshot of Selective Sync connection dialog" />
+<figcaption>Screenshot of Selective Sync connection dialog</figcaption></figure>
+
+
+
+
+<p>Now when you share the <code>Media</code> folder from Sync on the Mac Mini with your laptops, make sure to <strong>turn on <a href="http://help.getsync.com/hc/en-us/articles/205458095-Selective-Sync">Selective Sync</a></strong>. That’s the whole point of having a Pro license!</p>
+
+<p><a href="http://help.getsync.com/hc/en-us/articles/206217315-Selective-Sync-Mobile-">Sync on a mobile</a> has Selective Sync turned on by default, but on a desktop app, it’s Pro only.</p>
+
+<h2 id="setupsubsequentdevices">4. Setup subsequent devices</h2>
+
+<p>As fldcrft.uk is acting as a dumb, read-only mirror of all shared folders, you need to share folders <em>from your individual computers</em>. </p>
+
+<p>It’s best to use <a href="http://help.getsync.com/hc/en-us/articles/205648996-Folders">Advanced folders</a>, as you have more control over peer management, ie what you share with whom. Always err on <strong>Read Only</strong> permissions, for obvious reasons!</p>
+
+<p>The <a href="http://help.getsync.com/hc/en-us/categories/200140177">Sync documentation</a> is okay but I do find the Sync interface confusing. Luckily, if you email support (via <code>Preferences &gt; Help &gt; Contact Support</code>), they are pretty good in resolving in any issues.</p>
+</section>
+</div>
+
+</body>
+</html>
