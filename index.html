@@ -40,7 +40,8 @@
 <h3 id="contents">Contents</h1>
 <ol>
   <li><a href="#setupserver">Setup BitTorrent Sync server</a></li>
-  <li><a href="#adminfiles">Adding files &amp; sharing folders</a></li>
+  <li><a href="#addfiles">Add files &amp; share folders</a></li>
+  <li><a href="#server">Login to server browser interface</a></li>
   <li><a href="#largemediafiles">Large media files</a></li>
   <li><a href="#setupsubsequentdevices">Setup subsequent devices</a></li>
 </ol>
@@ -56,7 +57,7 @@
   <li><a href="https://cloud.digitalocean.com/droplets/13374117/backups">Enable DigitalOcean backups? $2 per month</a></li>
 </ol>
 
-<h2 id="adminfiles">2. Adding files &amp; sharing folders</h2>
+<h2 id="addfiles">2. Add files &amp; share folders</h2>
 
 <ol>
 <li>Organise your files and folders on one computer. It is important to have a simple yet flexible file structure.<br/>
@@ -64,17 +65,23 @@
 <li>Install Sync.</li>
 <li>Add folders to Sync.<br/>
 <img src="./img/02-add.png" alt="Screenshot of folders to add to Sync" /></li>
-<li>Copy link. For security, the BitTorrent Sync server should have READ ONLY permission.<br/>
-<img src="./img/03-copylink.png" alt="Screenshot of copy link dialog" /></li>
-<li>On the BitTorrent Sync server browser interface, click <code>Manual Connection</code> and paste in link.<br/>
-<img src="./img/04-manual.png" alt="Screenshot of browser manual connection dialog" /></li>
-<li>Connect to the folder. By default, all btsync folders are stored in <code>/shared/</code>.<br/>
-<img src="./img/05-connect.png" alt="Screenshot of browser connect to folder dialog" /></li>
-<li>Approve the connection. That’s it :)<br/>
-<img src="./img/06-pending.png" alt="Screenshot of browser pending approval message" /></li>
 </ol>
 
-<h2 id="largemediafiles">3. Large media files</h2>
+<h2 id="server">3. Login to server browser interface</h2>
+<ol>
+  <li>Login to the BitTorrent Sync server via the web browser interface.</li>
+  <li>The URL is something like <code>http://servername.uk:8888</code> – don’t forget the <code>:8888</code>!</li>
+  <li>On your local version of Sync, select the folder you want to share and <b>copy the link</b>. For security, the BitTorrent Sync server should have READ ONLY permission.<br/>
+  <img src="./img/03-copylink.png" alt="Screenshot of copy link dialog" /></li>
+  <li>On the BitTorrent Sync server browser interface, click <code>Manual Connection</code> and paste in link.<br/>
+  <img src="./img/04-manual.png" alt="Screenshot of browser manual connection dialog" /></li>
+  <li>Connect to the folder. By default, all btsync folders are stored in <code>/shared/</code>.<br/>
+  <img src="./img/05-connect.png" alt="Screenshot of browser connect to folder dialog" /></li>
+  <li>Approve the connection. That’s it :)<br/>
+  <img src="./img/06-pending.png" alt="Screenshot of browser pending approval message" /></li>
+</ol>
+
+<h2 id="largemediafiles">4. Large media files</h2>
 
 <p>When you set up your Mac Mini as a media server, follow the same process by installing Sync, adding the <code>Media</code> folder to Sync, then sharing it READ ONLY with BitTorrent Sync server. This way, the BitTorrent Sync server acts as a &#8220;mirror&#8221; of the Mac Mini <code>Media</code> library. That is, the BitTorrent Sync server will have <em>all</em> the hi-res images on it. </p>
 
